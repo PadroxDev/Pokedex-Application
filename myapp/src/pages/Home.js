@@ -3,6 +3,7 @@ import { getAll, insert, update, delete_by_name } from "../api/pokemons";
 import PokedexCard from "../components/PokedexCard";
 import ListExample from "../components/ListExample";
 
+
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
 
