@@ -10,15 +10,16 @@ body {
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2%;
-  margin: 2rem 10%;
+  margin: 2rem 10% 2rem 10%;
+  width: 80%;
 }
 
 .pokedex-card {
-  width: 12.5rem;
+  width: 14rem;
 }
 
 .pokedex-card .top-card-holder {
-  height: 12.5rem;
+  height: 14rem;
 }
 
 .pokedex-gradient {
@@ -134,3 +135,31 @@ a, a:hover,.white-text{
 a:hover{
   color: white !important; 
 }  
+
+.me-2 {
+  width:10%;
+  height:10%;
+}
+
+/* FLOATING BUTTONS */
+.floating-button-holder {
+  position: fixed;
+  bottom: 0%;
+  right: 20px;
+}
+
+.floating-button {
+  width:5rem;
+  height:5rem;
+  border-radius:100%;
+  font-size: 3rem;
+  font-weight:700;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  vertical-align:middle;
+}
+
+.floating-button p {
+  padding-top: 5px;
+}

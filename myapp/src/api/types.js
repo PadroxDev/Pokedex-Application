@@ -1,6 +1,6 @@
-export const getAllPokemons = async () => {
+export const getAllTypes = async () => {
     const response = await fetch(
-        'http://localhost:4444/pokemon/list', {
+        'http://localhost:4444/types/list', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -8,15 +8,15 @@ export const getAllPokemons = async () => {
             }
         }
     );
-    const pokemons = await response.json();
-    return pokemons;
+    const types = await response.json();
+    return types;
 }
 
-export const insertPokemon = async (name, number, types, imgUrl, shiny) => {
+export const insertType = async (name, color) => {
     const response = await fetch(
-        'http://localhost:4444/pokemon/insert', {
+        'http://localhost:4444/types/insert', {
             method: 'POST',
-            body: JSON.stringify({name, number, types, imgUrl, shiny}),
+            body: JSON.stringify({name, color}),
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -26,9 +26,9 @@ export const insertPokemon = async (name, number, types, imgUrl, shiny) => {
     return response.ok;
 }
 
-export const updatePokemon = async (name, updated) => {
+export const updateType = async (name, updated) => {
     const response = await fetch(
-        'http://localhost:4444/pokemon/update', {
+        'http://localhost:4444/types/update', {
             method: 'POST',
             body: JSON.stringify({name, updated}),
             headers: {
@@ -40,9 +40,9 @@ export const updatePokemon = async (name, updated) => {
     return response.ok;
 }
 
-export const deletePokemonByName = async (name) => {
+export const deleteTypeByName = async (name) => {
     const response = await fetch(
-        'http://localhost:4444/pokemon/delete_by_name', {
+        'http://localhost:4444/types/delete_by_name', {
             method: 'DELETE',
             body: JSON.stringify({name}),
             headers: {
@@ -52,4 +52,19 @@ export const deletePokemonByName = async (name) => {
         }
     );
     return response.ok;
+}
+
+export const findTypeByName = async (name) => {
+    const response = await fetch(
+        'http://localhost:4444.types/find_by_name', {
+            method: 'GET',
+            body: JSON.stringify({name}),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }
+    );
+    console.log("Ok ?", response.ok);
+    return await response.json();
 }
