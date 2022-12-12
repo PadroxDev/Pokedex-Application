@@ -5,8 +5,6 @@ import PokedexCard from "../components/PokedexCard";
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
 
-    delete_by_name("Dracolosse");
-
     useEffect(() => {
         const pokemonsFetched = getAll();
         pokemonsFetched

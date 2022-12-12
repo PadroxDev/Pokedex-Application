@@ -1,6 +1,6 @@
-import Home from "./pages/home";
-import Pokemons from "./pages/pokemons";
-import Pokedex from "./pages/pokedex";
+import Home from "./pages/Home";
+import Pokemons from "./pages/Pokemons";
+import Pokedex from "./pages/Pokedex";
 import {
   BrowserRouter as Router,
   Switch,
