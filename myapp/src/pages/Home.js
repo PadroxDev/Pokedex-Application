@@ -15,7 +15,6 @@ function Home(props) {
 
     return <div className="pokemon-list">
         <ListExample />
-        <h1>All available pokemons</h1>
         <div className="pokedex-content">
             {
                 pokemons.map((pokemon, key) => {
