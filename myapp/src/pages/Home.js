@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getAll, insert, update, delete_by_name } from "../api/pokemons";
+import PokedexCard from "../components/PokedexCard";
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
@@ -15,11 +16,13 @@ function Home(props) {
 
     return <div className="pokemon-list">
         <h1>All available pokemons</h1>
-        <div className="flex">
+        <div className="pokedex-content">
             {
                 pokemons.map((pokemon, key) => {
-                    return <div key={key} className="pokemon-block">
-                        <h2>{pokemon.name}</h2>
+                    return <div key={key} className="pokedex-block">
+                        <PokedexCard
+                            pokemon={pokemon}
+                        />
                     </div>
                 })
             }
