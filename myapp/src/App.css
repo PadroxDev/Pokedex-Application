@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar{
+  background-color:red;
+  height: 15%;
+}
+.home-button-image{
+  width: 10%;
+  border:#282c34;
+}
