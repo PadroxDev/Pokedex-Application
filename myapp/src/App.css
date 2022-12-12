@@ -105,10 +105,32 @@ body {
   transition: 0.5s;
 }
 
-.navbar{
+/*Zone de racisme*/
+
+.color-red{
   background-color: red;
+  
+}
+
+.navbar{
+  text-decoration: none !important;
+  text-decoration-line: none !important;
 }
 
 .home-button-image{
   width: 40%;
 }
+
+.pokedex-style-gradient{
+  background-image: linear-gradient(to bottom,rgb(5, 133, 184, 1), rgb(5,133,184, 0));
+  border-radius: 0%;
+  width: 10%;
+}
+
+
+a, a:hover,.white-text{
+  color: white !important; 
+}  
+a:hover{
+  color: white !important; 
+}  

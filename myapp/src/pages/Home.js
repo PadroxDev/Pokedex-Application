@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { getAll, insert, update, delete_by_name } from "../api/pokemons";
 import PokedexCard from "../components/PokedexCard";
 import ListExample from "../components/ListExample";
-
+import Footer from "../components/Footer";
+import Lorem from '../components/Lorem';
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
@@ -27,6 +28,8 @@ function Home(props) {
                 })
             }
         </div>
+        <Lorem />
+        <Footer />
     </div>
 }
 
