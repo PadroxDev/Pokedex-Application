@@ -36,11 +36,10 @@
   height: 90%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navabar{
+  background-color: red;
+}
+
+.home-button-image{
+  width: 40%;
 }
