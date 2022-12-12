@@ -3,11 +3,9 @@ import "../App.css";
 
 function ListExample() {
   return (
-    <div>
+    <div className="follow-scroll-navbar">
       <Nav className="navbar color-red" defaultActiveKey="/home" as="ul">
-        <Nav.Item as="li">
-          <Nav.Link className="" href="/home"><img className="home-button-image" src="./img/home_button.png"/></Nav.Link>
-        </Nav.Item>
+        <img href="/home" className="home-button-image color-red" src="./img/home_button.png"/>        
         <Nav.Item as="li">
           <Nav.Link eventKey="link-1 white-text">Pokémon</Nav.Link>
         </Nav.Item>
@@ -15,8 +13,9 @@ function ListExample() {
           <Nav.Link eventKey="link-2 white-text">Pokédex</Nav.Link>
         </Nav.Item>
       </Nav>
-      <div className="pokedex-style-gradient">
-    
+      <div className="pokedex-style-gradient row">
+        <div className='pokedex-top-part-shape'></div>
+        <div className='triangle triangle-top'></div>
       </div>
     </div>
   );
