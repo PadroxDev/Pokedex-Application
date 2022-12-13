@@ -8,6 +8,7 @@ import Lorem from '../components/Lorem';
 import AddPokemonModal from '../components/AddPokemonModal';
 import Filters from '../components/Filters';
 import UpdatePokemon from '../components/UpdatePokemon';
+import DeletePokemon from '../components/DeletePokemonModal';
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
@@ -57,6 +58,7 @@ function Home(props) {
             types={types}
         />
         <UpdatePokemon />
+        <DeletePokemon />
     </div>
 }
 

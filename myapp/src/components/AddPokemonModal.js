@@ -68,7 +68,7 @@ function AddPokemonModal(props) {
     return (
     <>
         <div className="floating-button-holder">
-            <Button className="floating-button add-pokemon-button" variant="outline-danger" onClick={handleShow}>
+            <Button className="floating-button add-pokemon-button" variant="outline-primary" onClick={handleShow}>
                 <p>+</p>
             </Button>
         </div>
@@ -112,7 +112,7 @@ function AddPokemonModal(props) {
                     <Form.Check type="checkbox" label="Shiny" onChange={handleShiny} />
                 </Form.Group>
 
-                <Button variant="danger" type="submit">
+                <Button variant="primary" type="submit">
                     Ajouter
                 </Button>
             </Form>

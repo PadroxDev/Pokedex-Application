@@ -201,6 +201,12 @@ a, a:hover,.white-text{
   right: 20px;
 }
 
+.delete-pokemon {
+  position: fixed;
+  bottom: 230px;
+  right: 20px;
+}
+
 .edit-pokemon:hover {
   color: white;
 }
