@@ -31,8 +31,7 @@ function AddPokemonModal(props) {
         setValidated(true);
 
         const jsonType1 = findTypeByName(type1);
-        const types = [jsonType1]
-        console.log(name, number, types, imgUrl, shiny);
+        const types = [jsonType1];
         insertPokemon(name, number, types, imgUrl, shiny);
     };
 
@@ -70,7 +69,7 @@ function AddPokemonModal(props) {
         <div className="floating-button-holder">
             <Button className="floating-button add-pokemon-button" variant="outline-danger" onClick={handleShow}>
                 <p>+</p>
-            </Button>;
+            </Button>
         </div>
 
         <Modal show={show} onHide={handleClose}>

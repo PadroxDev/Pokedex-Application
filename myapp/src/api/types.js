@@ -55,16 +55,4 @@ export const deleteTypeByName = async (name) => {
 }
 
 export const findTypeByName = async (name) => {
-    const response = await fetch(
-        'http://localhost:4444.types/find_by_name', {
-            method: 'GET',
-            body: JSON.stringify({name}),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }
-    );
-    console.log("Ok ?", response.ok);
-    return await response.json();
 }
