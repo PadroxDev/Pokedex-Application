@@ -1,56 +1,54 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-Array.prototype.alphaSort = function (data) {
-    function compareAlphabetical(a, b) {
-        return 1;
-    }
-    
-    function compareAlphabeticalInverse(a, b) {
-        return 1;
-    }
-    
-    function compareNumberAscending(a, b) {
-        if (a.number < b.number)
-            return -1;
-        if (a.number > b.number)
-            return 1;
-        return 0;
-    }
-    
-    function compareNumberDescending(a, b) {
-        if (a.number > b.number)
-            return -1;
-        if (a.number < b.number)
-            return 1;
-        return 0;
-    }
-}
-
-
-function compare(data, a, b) {
-    switch(data.sortOrder) {
-        case "Alphabetical ↓":
-            return compareAlphabetical(a, b);
-        case "Alphabetical ↑":
-            return compareAlphabeticalInverse(a, b);
-        case "Number ↑":
-            return compareNumberAscending(a, b);
-        case "Numéro ↓":
-            return compareNumberDescending(a, b);
-    }
-}
-
 function Filters(props) {
     const { register, handleSubmit } = useForm();
+    const { sortOrder, setSortOrder } = useState("Alphabetical ↓");
+
+    const compare = (a, b) => {
+        switch(sortOrder) {
+            case "Alphabetical ↓":
+                if (a.name < b.name)
+                    return -1;
+                if (a.name > b.name)
+                    return 1;
+                return 0;
+            case "Alphabetical ↑":
+                if (a.name > b.name)
+                    return -1;
+                if (a.name < b.name)
+                    return 1;
+                return 0;
+            case "Number ↑":
+                if (a.number < b.number)
+                    return -1;
+                if (a.number > b.number)
+                    return 1;
+                return 0;
+            case "Numéro ↓":
+                if (a.number > b.number)
+                    return -1;
+                if (a.number < b.number)
+                    return 1;
+                return 0;
+        }
+    }
+
     const onSubmit = (data) => {
         if (data.primaryType === "All") {
-            props.setPokemonsShow(props.pokemons.sort(compare(data)));
+            props.setPokemonsShow(
+                props.pokemons.sort(compare)
+            );
         } else {
-            props.setPokemonsShow(props.pokemons.filter(compare(data)));
+            props.setPokemonsShow(
+                props.pokemons.filter(
+                    compare(data)
+                )
+            );
         }
     }
  
@@ -88,7 +86,7 @@ function Filters(props) {
                 <Col>
                     <Form.Group className="mb-3" controlId="filterSortOrder">
                         <Form.Label>Sort Order</Form.Label>
-                        <Form.Select {...register("sortOrder")}>
+                        <Form.Select onChange={setSortOrder} {...register("sortOrder")}>
                             <option value="Alphabetical ↓">↓ Par ordre alphabétique</option>
                             <option value="Alphabetical ↑">↑ Par ordre alphabétique inverse</option>
                             <option value="Number ↑"> ↑ Par ordre numérique croissant</option>
