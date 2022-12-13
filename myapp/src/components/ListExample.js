@@ -15,7 +15,6 @@ function ListExample() {
       </Nav>
       <div className="pokedex-style-gradient row">
         <div className='pokedex-top-part-shape'></div>
-        <div className='triangle triangle-top'></div>
       </div>
     </div>
   );
