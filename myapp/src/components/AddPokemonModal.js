@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { findTypeByName } from '../api/types';
 import { insertPokemon } from '../api/pokemons';
 
 function GenerateTypesOptions(props) {
@@ -30,8 +29,10 @@ function AddPokemonModal(props) {
 
         setValidated(true);
 
-        const jsonType1 = findTypeByName(type1);
-        const types = [jsonType1];
+        const types=[];
+        types.push(props.types.find((t)=>t.name===type1));
+        if (type2 != "None")
+            types.push(props.types.find((t)=>t.name===type2));
         insertPokemon(name, number, types, imgUrl, shiny);
     };
 

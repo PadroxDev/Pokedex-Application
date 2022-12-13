@@ -233,3 +233,19 @@ a, a:hover,.white-text{
 .floating-button p {
   padding-top: 5px;
 }
+
+/* FILTERS */
+
+.filters-button-column {
+  display: flex;
+  align-items: flex-end;
+}
+
+.filters-button {
+  margin: 20% 0%;
+}
+
+.filters-form {
+  margin-left: 10%;
+  margin-right: 10%;
+}

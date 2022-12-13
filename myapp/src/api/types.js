@@ -12,6 +12,20 @@ export const getAllTypes = async () => {
     return types;
 }
 
+export const findTypeByName = async (name) => {
+    const response = await fetch(
+        'http://localhost:4444/types/query?name=' + name, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }
+    );
+    const type = await response.json();
+    return type;
+}
+
 export const insertType = async (name, color) => {
     const response = await fetch(
         'http://localhost:4444/types/insert', {
@@ -52,7 +66,4 @@ export const deleteTypeByName = async (name) => {
         }
     );
     return response.ok;
-}
-
-export const findTypeByName = async (name) => {
 }
