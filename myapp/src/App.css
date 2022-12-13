@@ -188,14 +188,21 @@ a, a:hover,.white-text{
   height: 50px; 
 }
 
-
-
-
 /* FLOATING BUTTON */
 .floating-button-holder {
   position: fixed;
   bottom: 20px;
   right: 20px;
+}
+
+.edit-pokemon {
+  position: fixed;
+  bottom: 125px;
+  right: 20px;
+}
+
+.edit-pokemon:hover {
+  color: white;
 }
 
 .floating-button {
@@ -219,6 +226,12 @@ a, a:hover,.white-text{
 .filters-button-column {
   display: flex;
   align-items: flex-end;
+}
+
+.shiny-check {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
 }
 
 .filters-button {

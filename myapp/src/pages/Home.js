@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Lorem from '../components/Lorem';
 import AddPokemonModal from '../components/AddPokemonModal';
 import Filters from '../components/Filters';
+import UpdatePokemon from '../components/UpdatePokemon';
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
@@ -25,6 +26,10 @@ function Home(props) {
             .catch(error => console.log("Erreur avec votre API :", error.message));
     }, []);
 
+    function getPokemonsShow() {
+        return pokemonsShow;
+    }
+
     return <div className="pokemon-list">
         <ListExample />
         <h1 className="top-page-spacing">Pokédex</h1>
@@ -33,6 +38,7 @@ function Home(props) {
             types={types}
             pokemons={pokemons}
             setPokemonsShow={setPokemonsShow}
+            pokemonsShow={getPokemonsShow}
         />
         <div className="pokedex-content">
             {
@@ -50,6 +56,7 @@ function Home(props) {
         <AddPokemonModal
             types={types}
         />
+        <UpdatePokemon />
     </div>
 }
 
