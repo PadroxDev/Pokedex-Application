@@ -15,8 +15,8 @@ function Home(props) {
 
     useEffect(() => {
         const pokemonsFetched = getAllPokemons();
-        pokemonsFetched
-            .then(result => {setPokemons(result);pokemonsShow(result)})
+        pokemonsFetched 
+            .then(result => {setPokemons(result);setPokemonsShow(result)})
             .catch(error => console.log("Erreur avec votre API :", error.message));
 
         const typesFetched = getAllTypes();
