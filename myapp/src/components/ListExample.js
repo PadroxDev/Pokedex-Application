@@ -5,12 +5,12 @@ function ListExample() {
   return (
     <div className="follow-scroll-navbar">
       <Nav className="navbar color-red" defaultActiveKey="/home" as="ul">
-        <img href="/home" className="home-button-image color-red" src="./img/home_button.png"/>        
+        <img className="home-button-image color-red" src="./img/home_button.png"/>     
         <Nav.Item as="li">
-          <Nav.Link eventKey="link-1 white-text">Pokémon</Nav.Link>
+          <Nav.Link href="/pokemons" eventKey="link-1 white-text">Pokémon</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link eventKey="link-2 white-text">Pokédex</Nav.Link>
+          <Nav.Link href="/pokedex" eventKey="link-2 white-text">Pokédex</Nav.Link>
         </Nav.Item>
       </Nav>
       <div className="pokedex-style-gradient row">
