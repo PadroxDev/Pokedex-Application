@@ -10,12 +10,13 @@ import Filters from '../components/Filters';
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
+    const [ pokemonsShow, setPokemonsShow ] = useState([]);
     const [ types, setTypes ] = useState([]);
 
     useEffect(() => {
         const pokemonsFetched = getAllPokemons();
         pokemonsFetched
-            .then(result => setPokemons(result))
+            .then(result => {setPokemons(result);pokemonsShow(result)})
             .catch(error => console.log("Erreur avec votre API :", error.message));
 
         const typesFetched = getAllTypes();
@@ -26,14 +27,16 @@ function Home(props) {
 
     return <div className="pokemon-list">
         <ListExample />
-        <h1>Pokédex</h1>
+        <h1 className="top-page-spacing">Pokédex</h1>
         <h2>Filters</h2>
         <Filters
             types={types}
+            pokemons={pokemons}
+            setPokemonsShow={setPokemonsShow}
         />
         <div className="pokedex-content">
             {
-                pokemons.map((pokemon, key) => {
+                pokemonsShow.map((pokemon, key) => {
                     return <div key={key} className="pokedex-block">
                         <PokedexCard
                             pokemon={pokemon}
