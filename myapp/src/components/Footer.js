@@ -5,13 +5,12 @@ import "../App.js"
 function Footer() {
   return (
     <div>
-      <div className='pokedex-style-gradient-upward'>
+      <div className='pokedex-style-gradient-upward '>
         <div className='pokedex-bot-part-shape'></div>
-        <div className='triangle triangle-bot'></div>
       </div>
-      <MDBFooter className='white-text text-center text-lg-start text-muted color-red footer-margin'>
-        <section className=''>
-          <MDBContainer className='text-center text-md-start mt-5'>
+      <MDBFooter className='white-text text-center text-lg-start text-muted color-red'>
+        <section>
+          <MDBContainer className='text-center text-md-start'>
             <MDBRow className='mt-3'>
               <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
                 <h6 className='text-uppercase fw-bold mb-4'>
@@ -23,7 +22,6 @@ function Footer() {
                   consectetur adipisicing elit.
                 </p>
               </MDBCol>
-
               <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
                 <h6 className='text-uppercase fw-bold mb-4  '>Products</h6>
                 <p>
