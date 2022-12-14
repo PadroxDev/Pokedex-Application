@@ -18,8 +18,8 @@ function Footer() {
                   Aled Sauvé Nou
                 </h6>
                 <p>
-                  Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit.
+                 AU SECOURS, LES GRID CSS SONT INFAME, OVEFLOW OBLIGATOIRE, 
+                 JEANNE AU SECOURS
                 </p>
               </MDBCol>
               <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4 center-text white-text'>

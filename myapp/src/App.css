@@ -13,7 +13,6 @@ body {
 /*Pokedex Page*/
 .pokedex-content {
   display: inline-grid;
-  grid-template-rows: auto auto 1fr 1fr 1fr auto auto;
   grid-template-columns: repeat(5, 1fr);
   gap: 2%;
   margin: 2rem 10%;
@@ -181,7 +180,6 @@ body {
   width: 100%;
   display: flex;
   align-items: end;
-  margin-top: 200px;
 }
 
 .pokedex-bot-part-shape{
@@ -293,46 +291,63 @@ body {
 
 /*Pokemon Page*/
 
-@media screen and (min-width: 1008px) and (max-width: 2004px){
+@media screen and (min-width: 1501px){
   .pokemon-content {
     display: inline-grid;
-    grid-template-columns: repeat(4, 1fr);
+    overflow: auto;
+    grid-template-columns: repeat(5, 1fr);
     gap: 2%;
+    row-gap: 0.7%;
     margin: 2rem 10%;
-    margin-bottom: 250px;
     z-index: 1;
   }
-  .pokedex-style-gradient-upward{
-    margin-top: 20%;
+}
+
+@media screen and (min-width: 1008px) and (max-width: 1500px){
+  .pokemon-content {
+    display: inline-grid;
+    overflow: auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2%;
+    row-gap: 0.5%;
+    margin: 2rem 10%;
+    z-index: 1;
   }
 }
 
 @media screen and (min-width: 641px) and (max-width: 1007px){
   .pokemon-content {
     display: inline-grid;
+    overflow: auto;
     grid-template-columns: repeat(3, 1fr);
     height: 100%;
-    gap: 2%;
+    gap: 5%;
+    row-gap: 0.6%;
     margin: 2rem 10%;
-    margin-bottom: 250px;
     z-index: 1;
-  }
-  .pokedex-style-gradient-upward{
-    margin-top: 20%;
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 640px) and (min-width : 375px){
   .pokemon-content {
     display: inline-grid;
+    overflow: auto;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2%;
+    gap: 5%;
+    row-gap: 0.25%;
     margin: 2rem 10%;
-    margin-bottom: 250px;
     z-index: 1;
   }
-  .pokedex-style-gradient-upward{
-    margin-top: 20%;
+}
+
+@media screen and (max-width: 374px) {
+  .pokemon-content {
+    display: inline-grid;
+    overflow: auto;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.25%;
+    margin: 2rem 10%;
+    z-index: 1;
   }
 }
 
