@@ -24,9 +24,9 @@ function Home(props) {
             .catch(error => console.log("Erreur avec votre API :", error.message));
     }, []);
 
-    return <div className="pokemon-list">
+    return <div>
         <ListExample />
-        <h1>Pokédex</h1>
+        <h1 className="pokemon-list">Pokédex</h1>
         <h2>Filters</h2>
         <Filters
             types={types}

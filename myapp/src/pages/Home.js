@@ -36,9 +36,9 @@ function Home(props) {
         return pokemonsShow;
     }
 
-    return <div className="pokemon-list">
+    return <div>
         <ListExample />
-        <h1 className="top-page-spacing">Pokédex</h1>
+        <h1  className="pokemon-list">Pokédex</h1>
         <h2>Filters</h2>
         <Filters
             types={types}
