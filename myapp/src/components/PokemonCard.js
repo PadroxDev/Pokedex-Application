@@ -1,7 +1,13 @@
 import Button from 'react-bootstrap/Button';
 import "../App.css";
+import { getPokedexByName, updatePokedex } from '../api/pokedex';
 
 function PokemonCard(props) {
+    const handleCatch = async (event, props) => {
+        const pokemonFetched = await getPokedexByName(props.pokemon.name);
+        console.log(pokemonFetched);
+    }
+
     return <div className="pokemon-card">
         <div className="pokemon-top-card-holder">
             <div className="pokemon-gradient" style={{"backgroundImage":props.pokemon.types.length == 1 ? "linear-gradient(to bottom, " + props.pokemon.types[0].color + ", " + props.pokemon.types[0].color + "66)" : "linear-gradient(to bottom, " + props.pokemon.types[0].color + ", " + props.pokemon.types[1].color + "CC)"}}>
@@ -23,7 +29,7 @@ function PokemonCard(props) {
             </div>
         </div>
         <div className="pokemon-button-holder">
-            <Button className="pokemon-capture-button" variant="outline-danger">CAPTURER!</Button>{' '}
+            <Button className="pokemon-capture-button" variant="outline-danger" onClick={event => handleCatch(event, props)}>CAPTURER!</Button>{' '}
         </div>
     </div>
 }
