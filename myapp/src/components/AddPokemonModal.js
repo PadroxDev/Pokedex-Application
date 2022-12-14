@@ -15,7 +15,7 @@ function AddPokemonModal(props) {
     const [validated, setValidated] = useState(false);
     const [name, setName] = useState("Pikachu");
     const [number, setNumber] = useState("025");
-    const [type1, setType1] = useState("Acier");
+    const [type1, setType1] = useState("Électrik");
     const [type2, setType2] = useState("None");
     const [imgUrl, setImgUrl] = useState("https://www.pokepedia.fr/images/thumb/7/76/Pikachu-DEPS.png/250px-Pikachu-DEPS.png");
     const [shiny, setShiny] = useState(false);
@@ -80,36 +80,36 @@ function AddPokemonModal(props) {
         <Modal.Body>
             <Form validated={validated} onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formPokemonName">
-                    <Form.Label>Pokemon's Name</Form.Label>
+                    <Form.Label>Nom du Pokémon</Form.Label>
                     <Form.Control type="text" placeholder="Pikachu" onChange={handleName} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formPokemonNumber">
-                    <Form.Label>Pokemon's Number</Form.Label>
+                    <Form.Label>Numéro du Pokémon</Form.Label>
                     <Form.Control type="text" placeholder="025" onChange={handleNumber} />
                 </Form.Group>
                 
-                <Form.Label>Pokemon's Types</Form.Label>
                 <Form.Group className="mb-3" controlId="formPokemonType1">
-                    <Form.Select onChange={handleType1}>
+                    <Form.Label>Types du Pokémon</Form.Label>
+                    <Form.Select defaultValue="Électrik" onChange={handleType1}>
                         {dropdownOptions}
                     </Form.Select>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formPokemonType2">
                     <Form.Select onChange={handleType2}>
-                        <option value="None">None</option>
+                        <option value="None">Aucun</option>
                         {dropdownOptions}
                     </Form.Select>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formPokemonImgUrl">
-                    <Form.Label>Pokemon's Image as a URL</Form.Label>
+                    <Form.Label>URL de l'image du Pokémon</Form.Label>
                     <Form.Control type="text" placeholder="https://www.pokepedia.fr/images/thumb/7/76/Pikachu-DEPS.png/250px-Pikachu-DEPS.png" onChange={handleImgUrl} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formPokemonShiny">
-                    <Form.Check type="checkbox" label="Shiny" onChange={handleShiny} />
+                    <Form.Check type="checkbox" label="Chromatique" onChange={handleShiny} />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
@@ -119,7 +119,7 @@ function AddPokemonModal(props) {
         </Modal.Body>
         <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
-                Retour
+                Fermer
             </Button>
         </Modal.Footer>
         </Modal>
