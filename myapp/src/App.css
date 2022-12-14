@@ -292,6 +292,14 @@ body {
 
 /*Pokemon Page*/
 
+.pokedex-content::-webkit-scrollbar {
+  display: none;
+}
+.pokedex-content{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 @media screen and (min-width: 1501px){
   .pokemon-content {
     display: inline-grid;
