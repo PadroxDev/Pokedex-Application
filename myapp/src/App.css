@@ -464,7 +464,7 @@ h1 {
   background: linear-gradient(to right,blue, white, red, blue, white, red, blue, white, red, blue, white, red);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  padding-top: 14%;
+  padding-top: 200px;
 
 }
 
