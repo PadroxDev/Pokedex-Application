@@ -114,7 +114,7 @@ function Filters(props) {
                 </Col>
 
                 <Col className="filters-button-column">
-                    <Form.Group className="mb-3" controlId="filterSubmitButton">
+                    <Form.Group className="mb-3 " controlId="filterSubmitButton">
                         <Button variant="success" type="submit">
                             Filtrer
                         </Button>

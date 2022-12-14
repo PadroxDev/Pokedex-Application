@@ -10,7 +10,6 @@ body {
 /*Pokedex Page*/
 .pokedex-content {
   display: inline-grid;
-  grid-template-rows: auto auto 1fr 1fr 1fr auto auto;
   grid-template-columns: repeat(5, 1fr);
   gap: 2%;
   margin: 2rem 0;
@@ -123,10 +122,6 @@ body {
   background-color: #FF3E3E;
 }
 
-.color-dark-red{
-  background-color: rgb(255, 45, 45);
-}
-
 .follow-scroll-navbar{
   position: fixed;
   width: 100%;
@@ -140,35 +135,25 @@ body {
 .navbar-text-link{
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  margin-left: 4.2%;
+  width: 85.8%;
 }
 
-.navbar-items{
+.navbar-items, .navbar-items:hover{
+  width: fit-content;
+  color: aliceblue;
+  font-size: 250%;
   font-family: 'Righteous', cursive;
-  font-size:xx-large;
 }
 
-@media screen and (min-width: 900px) {
-  .home-button-image {
-    width: 5%;
-    z-index: 2;
-    margin-top: 1%;
-    margin-left: 1.5%;
-    transform: scale(1.1);
-  }
-  .navbar-text-link{
-    margin-left: 8%;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .home-button-image {
-    width: 10%;
-    z-index: 2;
-    transform: scale(1);
-  }
-  .navbar-text-link{
-    margin-left: 3%;
-  }
+.home-button-image {
+  width: 10%;
+  max-width: 10px;
+  height: 10%;
+  max-height: 10px;
+  z-index: 2;
+  transform: scale(1.1);
 }
 
 .pokedex-top-part-shape{
@@ -187,16 +172,10 @@ body {
   z-index: 1;
 }
 
-a, a:hover,.white-text{
-  color: white !important; 
-}
-
-
 /*Footer*/
-.center-text{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.footer-z-index{
+  z-index: 2;
 }
 
 .pokedex-style-gradient-upward{
@@ -206,7 +185,6 @@ a, a:hover,.white-text{
   width: 100%;
   display: flex;
   align-items: end;
-  margin-top: 200px;
 }
 
 .pokedex-bot-part-shape{
@@ -217,8 +195,30 @@ a, a:hover,.white-text{
   height: 50px; 
 }
 
-.footer-z-index{
-  z-index: 2;
+
+.center-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.white-text, .white-text a{
+  color: white !important; 
+  font-family: 'Righteous', cursive;
+  font-size: 100%;
+  text-decoration: none;
+}
+
+.white-text a:hover{
+  color: white !important; 
+  font-family: 'Righteous', cursive;
+  font-size: 100%;
+  font-weight: 600;
+}
+
+.color-dark-red{
+  background-color: rgb(255, 45, 45);
 }
 
 /* FLOATING BUTTON */
@@ -291,46 +291,71 @@ a, a:hover,.white-text{
 
 /*Pokemon Page*/
 
-@media screen and (min-width: 1008px){
+.pokedex-content::-webkit-scrollbar {
+  display: none;
+}
+.pokedex-content{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media screen and (min-width: 1501px){
   .pokemon-content {
     display: inline-grid;
+    overflow: auto;
     grid-template-columns: repeat(5, 1fr);
     gap: 2%;
+    row-gap: 0.7%;
     margin: 2rem 10%;
-    margin-bottom: 250px;
     z-index: 1;
   }
-  .pokedex-style-gradient-upward{
-    margin-top: 200px;
+}
+
+@media screen and (min-width: 1008px) and (max-width: 1500px){
+  .pokemon-content {
+    display: inline-grid;
+    overflow: auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2%;
+    row-gap: 0.5%;
+    margin: 2rem 10%;
+    z-index: 1;
   }
 }
 
 @media screen and (min-width: 641px) and (max-width: 1007px){
   .pokemon-content {
     display: inline-grid;
+    overflow: auto;
     grid-template-columns: repeat(3, 1fr);
     height: 100%;
-    gap: 2%;
+    gap: 5%;
+    row-gap: 0.6%;
     margin: 2rem 10%;
-    margin-bottom: 250px;
     z-index: 1;
-  }
-  .pokedex-style-gradient-upward{
-    margin-top: 600px;
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 640px) and (min-width : 375px){
   .pokemon-content {
     display: inline-grid;
+    overflow: auto;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2%;
+    gap: 5%;
+    row-gap: 0.25%;
     margin: 2rem 10%;
-    margin-bottom: 250px;
     z-index: 1;
   }
-  .pokedex-style-gradient-upward{
-    margin-top: 2000px;
+}
+
+@media screen and (max-width: 374px) {
+  .pokemon-content {
+    display: inline-grid;
+    overflow: auto;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.25%;
+    margin: 2rem 10%;
+    z-index: 1;
   }
 }
 
