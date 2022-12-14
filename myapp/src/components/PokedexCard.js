@@ -22,9 +22,6 @@ function PokemonCard(props) {
                 ))}
             </div>
         </div>
-        <div className="button-holder">
-            <Button className="capture-button" variant="outline-danger">CAPTURER!</Button>{' '}
-        </div>
     </div>
 }
 

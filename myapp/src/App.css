@@ -14,7 +14,7 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-*/
+
 .pokemon-list{
   padding-top: 15%;
 }
@@ -23,8 +23,15 @@ body::-webkit-scrollbar {
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2%;
-  margin: 2rem 10%;
+  margin: 2rem 0;
   margin-bottom: 250px;
+  width:100%;
+}
+
+.pokedex-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .pokedex-card {
@@ -281,11 +288,6 @@ body::-webkit-scrollbar {
   margin: 20% 0%;
 }
 
-.filters-form {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
 .top-page-spacing {
   padding-top: 11rem;
 }
@@ -459,4 +461,23 @@ body::-webkit-scrollbar {
   border: solid #dc3545 0.2rem;
   color: #dc3545;
   transition: 0.5s;
+}
+
+/* TITLES */
+h1 {
+  font-size : 6rem;
+  font-weight: 400;
+  top: 40%;
+  left: 40%;
+  font-family: cursive;
+  background: linear-gradient(to right,blue, white, red, blue, white, red, blue, white, red, blue, white, red);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  padding-top: 14%;
+
+}
+
+.main-container {
+  margin-left: 10%;
+  margin-right: 10%;
 }

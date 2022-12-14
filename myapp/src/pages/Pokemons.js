@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getAllPokemons, insertPokemon, updatePokemon, deletePokemonByName } from "../api/pokemons";
 import { getAllTypes, findTypeByName, deleteTypeByName } from "../api/types"
 import PokemonCard from "../components/PokemonCard";
-import ListExample from "../components/ListExample";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AddPokemonModal from '../components/AddPokemonModal';
 import Filters from '../components/Filters';
@@ -26,7 +26,7 @@ function Home(props) {
     }, []);
 
     return <div>
-        <ListExample />
+        <Navbar />
         <h1 className="pokemon-list">Pokémon</h1>
         <h2>Filters</h2>
         <Filters

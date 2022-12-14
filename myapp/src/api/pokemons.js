@@ -26,11 +26,11 @@ export const getPokemonByName = async (name) => {
     return pokemon;
 }
 
-export const insertPokemon = async (name, number, types, imgUrl, shiny) => {
+export const insertPokemon = async (name, number, types, imgUrl) => {
     const response = await fetch(
         'http://localhost:4444/pokemon/insert', {
             method: 'POST',
-            body: JSON.stringify({name, number, types, imgUrl, shiny}),
+            body: JSON.stringify({name, number, types, imgUrl}),
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',

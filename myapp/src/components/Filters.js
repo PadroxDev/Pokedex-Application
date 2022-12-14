@@ -73,7 +73,7 @@ function Filters(props) {
     const dropdownOptions = GenerateTypesOptions(props);
 
     return (
-        <Form className="filters-form" onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
             <Row>
                 <Col>
                     <Form.Group className="mb-3" controlId="filterPrimaryType">
