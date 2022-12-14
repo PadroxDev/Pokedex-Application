@@ -11,7 +11,6 @@ body {
   grid-template-columns: repeat(5, 1fr);
   gap: 2%;
   margin: 2rem 10%;
-  margin-top: 250px;
 }
 
 .pokedex-card {
@@ -113,7 +112,7 @@ body {
 }
 
 .color-dark-red{
-  background-color: rgb(128, 0, 0);
+  background-color: rgb(255, 45, 45);
 }
 
 .follow-scroll-navbar{
@@ -122,15 +121,17 @@ body {
   z-index: 3;
 }
 
-.navbar{
-  text-decoration: none !important;
-  text-decoration-line: none !important;
-  max-height: 100px;
-  width: 100%;
-}
-
 .row{
   margin: 0px !important;
+}
+
+.navbar-text-link{
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-items{
+  justify-content: center;
 }
 
 @media screen and (min-width: 900px) {
@@ -139,7 +140,10 @@ body {
     z-index: 2;
     margin-top: 1%;
     margin-left: 1.5%;
-    transform: scale(1.2);
+    transform: scale(1.1);
+  }
+  .navbar-text-link{
+    margin-left: 8%;
   }
 }
 
@@ -148,6 +152,9 @@ body {
     width: 10%;
     z-index: 2;
     transform: scale(1);
+  }
+  .navbar-text-link{
+    margin-left: 3%;
   }
 }
 
