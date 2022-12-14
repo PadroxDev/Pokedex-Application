@@ -1,11 +1,20 @@
 import Button from 'react-bootstrap/Button';
 import "../App.css";
-import { getPokedexByName, updatePokedex } from '../api/pokedex';
+import { getPokedexByName, insertPokedex, updatePokedex } from '../api/pokedex';
+
+const shinyRate = 10;
+
+const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+}
 
 function PokemonCard(props) {
     const handleCatch = async (event, props) => {
         const pokemonFetched = await getPokedexByName(props.pokemon.name);
-        console.log(pokemonFetched);
+        if (pokemonFetched === null || !pokemonFetched.shiny) {
+            const isShiny = getRandomInt(shinyRate) == 0;
+            updatePokedex(props.pokemon.name, {name:props.pokemon.name, number:props.pokemon.number, types:props.pokemon.types, imgUrl:isShiny ? props.pokemon.imgUrlShiny : props.pokemon.imgUrl, shiny:isShiny})
+        }
     }
 
     return <div className="pokemon-card">
