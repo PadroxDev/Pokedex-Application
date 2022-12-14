@@ -16,7 +16,7 @@ function Home(props) {
 
     useEffect(() => {
         const pokemonsFetched = getAllPokemons();
-        pokemonsFetched 
+        pokemonsFetched
             .then(result => {setPokemons(result);setPokemonsShow(result.sort((a, b) => {
                 if (a.number < b.number)
                     return -1;
@@ -48,12 +48,6 @@ function Home(props) {
                 setPokemonsShow={setPokemonsShow}
                 pokemonsShow={getPokemonsShow}
             />
-
-            <div className="square">
-                <div>
-                    Content
-                </div>
-            </div>
 
             <div className="pokedex-content">
                 {
