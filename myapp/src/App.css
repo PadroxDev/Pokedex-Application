@@ -281,6 +281,14 @@ a, a:hover,.white-text{
   padding-top: 11rem;
 }
 
+.back-button {
+  margin-left: 1rem;
+}
+
+.text-muted {
+  color: #FF3E3E !important;
+}
+
 /*Pokemon Page*/
 
 @media screen and (min-width: 1008px){

@@ -4,7 +4,6 @@ import { getAllTypes, findTypeByName, deleteTypeByName } from "../api/types"
 import PokedexCard from "../components/PokedexCard";
 import ListExample from "../components/ListExample";
 import Footer from "../components/Footer";
-import Lorem from '../components/Lorem';
 import AddPokemonModal from '../components/AddPokemonModal';
 import Filters from '../components/Filters';
 import UpdatePokemon from '../components/UpdatePokemon';
@@ -18,7 +17,13 @@ function Home(props) {
     useEffect(() => {
         const pokemonsFetched = getAllPokemons();
         pokemonsFetched 
-            .then(result => {setPokemons(result);setPokemonsShow(result)})
+            .then(result => {setPokemons(result);setPokemonsShow(result.sort((a, b) => {
+                if (a.number < b.number)
+                    return -1;
+                if (a.number > b.number)
+                    return 1;
+                return 0;
+            }))})
             .catch(error => console.log("Erreur avec votre API :", error.message));
 
         const typesFetched = getAllTypes();
@@ -56,7 +61,9 @@ function Home(props) {
         <AddPokemonModal
             types={types}
         />
-        <UpdatePokemon />
+        <UpdatePokemon
+            types={types}
+        />
         <DeletePokemon />
     </div>
 }

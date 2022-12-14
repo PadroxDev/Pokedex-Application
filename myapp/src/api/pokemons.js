@@ -12,6 +12,20 @@ export const getAllPokemons = async () => {
     return pokemons;
 }
 
+export const getPokemonByName = async (name) => {
+    const response = await fetch(
+        'http://localhost:4444/pokemon/query?name=' + name, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }
+    );
+    const pokemon = await response.json();
+    return pokemon;
+}
+
 export const insertPokemon = async (name, number, types, imgUrl, shiny) => {
     const response = await fetch(
         'http://localhost:4444/pokemon/insert', {
