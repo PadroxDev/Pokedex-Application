@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { getAllPokemons, insertPokemon, updatePokemon, deletePokemonByName } from "../api/pokemons";
 import { getAllTypes, findTypeByName, deleteTypeByName } from "../api/types"
-import PokedexCard from "../components/PokedexCard";
+import PokemonCard from "../components/PokemonCard";
 import ListExample from "../components/ListExample";
 import Footer from "../components/Footer";
-import Lorem from '../components/Lorem';
 import AddPokemonModal from '../components/AddPokemonModal';
 import Filters from '../components/Filters';
 
@@ -24,25 +23,24 @@ function Home(props) {
             .catch(error => console.log("Erreur avec votre API :", error.message));
     }, []);
 
-    return <div className="pokemon-list">
+    return <div>
         <ListExample />
-        <h1>Pokémon</h1>
+        <h1 className="pokemon-list">Pokémon</h1>
         <h2>Filters</h2>
         <Filters
             types={types}
         />
-        <div className="pokedex-content">
+        <div className="pokemon-content">
             {
                 pokemons.map((pokemon, key) => {
-                    return <div key={key} className="pokedex-block">
-                        <PokedexCard
+                    return <div key={key} className="pokemon-block">
+                        <PokemonCard
                             pokemon={pokemon}
                         />
                     </div>
                 })
             }
         </div>
-        <Lorem />
         <Footer />
         <AddPokemonModal
             types={types}

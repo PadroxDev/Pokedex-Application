@@ -52,7 +52,6 @@ function Home(props) {
                 })
             }
         </div>
-        <Lorem />
         <Footer />
         <AddPokemonModal
             types={types}

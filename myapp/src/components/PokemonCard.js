@@ -1,24 +1,31 @@
-import "./PokemonCard.css"
+import Button from 'react-bootstrap/Button';
+import "../App.css";
 
-class PokemonCard extends Component{
-    render(){
-        return  <div>
-                    <h1>Liste des pokemons disponibles</h1>
-                    <div className="card">
-                        <div className="gradiant-card">
-                            
-                        </div>
-                        <div className="card-info">
-                            <div>
-                                
-                            </div>
-                            <div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>    
-    }
+function PokemonCard(props) {
+    return <div className="pokemon-card">
+        <div className="pokemon-top-card-holder">
+            <div className="pokemon-gradient" style={{"background-image":props.pokemon.types.length == 1 ? "linear-gradient(to bottom, " + props.pokemon.types[0].color + ", " + props.pokemon.types[0].color + "66)" : "linear-gradient(to bottom, " + props.pokemon.types[0].color + ", " + props.pokemon.types[1].color + "CC)"}}>
+                <div className="">
+                    {props.pokemon.shiny &&
+                        <img className="shiny-sparkles" src="./img/shiny_sparkles.png" alt="Shiny sparkles"></img>
+                    }
+                    <img className="pokemon-image img-fluid" src={props.pokemon.imgUrl} alt="pokemon-image"></img>
+                </div>
+            </div>
+        </div>
+        <div className="pokemon-data-holder">
+            <div className="pokemon-number">No. {props.pokemon.number}</div>
+            <div className="pokemon-name">{props.pokemon.name}</div>
+            <div className="pokemon-types-alignment">
+                {props.pokemon.types.map((type, key) => (
+                    <img key={key} className="pokemon-type-img" src={'./img/' + type.name + '.png'} alt="pokemon-type"></img>
+                ))}
+            </div>
+        </div>
+        <div className="pokemon-button-holder">
+            <Button className="pokemon-capture-button" variant="outline-danger">CAPTURER!</Button>{' '}
+        </div>
+    </div>
 }
 
 export default PokemonCard;
