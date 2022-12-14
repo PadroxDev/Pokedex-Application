@@ -6,18 +6,33 @@ import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import { updatePokemon } from '../api/pokemons';
 import EnableEditForm from './EnableEditForm';
-import AddPokemonModal from './AddPokemonModal';
 
 function UpdatePokemon(props) {
     const [show, setShow] = useState(false);
-    const { register, handleSubmit } = useForm();
+    const { register, reset, handleSubmit } = useForm();
     const [ concernedPokemon, setConcernedPokemon ] = useState(null);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     
     const onSubmit = (data) => {
-        console.log(data);
+        const types = [];
+        types.push(props.types.find((t) => t.name===data.editPokemonType1));
+        if (data.editPokemonType2 != "None")
+        types.push(props.types.find((t) => t.name===data.editPokemonType2));
+        updatePokemon(concernedPokemon.name, {name:data.editPokemonName, number:data.editPokemonNumber, types:types, imgUrl:data.editPokemonImgUrl, shiny:data.editPokemonShiny});
+        window.location.reload(false);
+    }
+
+    let setEnableEditShow;
+    
+    const getEnableEditShow = (setEditShow) => {
+        setEnableEditShow = setEditShow;
+    }
+    
+    const handleOnClick = () => {
+        setConcernedPokemon(null);
+        setEnableEditShow(true);
     }
 
     function GenerateTypesOptions(props) {
@@ -42,28 +57,32 @@ function UpdatePokemon(props) {
             <Modal.Body>
                 <EnableEditForm
                     setConcernedPokemon={setConcernedPokemon}
+                    getEnableEditShow={getEnableEditShow}
+                    resetForm={() => {
+                        reset();
+                    }}
                 />
                 {concernedPokemon != null &&
                     <Form onSubmit={handleSubmit(onSubmit)}>
                         <Form.Group className="mb-3" controlId="formEditPokemonName">
                             <Form.Label>Nom du Pokémon</Form.Label>
-                            <Form.Control type="text" value={concernedPokemon.name} />
+                            <Form.Control {...register("editPokemonName")} type="text" defaultValue={concernedPokemon.name} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formEditPokemonNumber">
                             <Form.Label>Numéro du Pokémon</Form.Label>
-                            <Form.Control type="text" value={concernedPokemon.number} />
+                            <Form.Control {...register("editPokemonNumber")} type="text" defaultValue={concernedPokemon.number} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formEditPokemonType1">
                             <Form.Label>Types du Pokémon</Form.Label>
-                            <Form.Select value={concernedPokemon.types[0].name}>
+                            <Form.Select {...register("editPokemonType1")} defaultValue={concernedPokemon.types[0].name}>
                                 {dropdownOptions}
                             </Form.Select>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formEditPokemonType2">
-                            <Form.Select value={concernedPokemon.types.length >= 2 ? concernedPokemon.types[1].name : "None"}>
+                            <Form.Select {...register("editPokemonType2")} defaultValue={concernedPokemon.types.length >= 2 ? concernedPokemon.types[1].name : "None"}>
                                 <option value="None">Aucun</option>
                                 {dropdownOptions}
                             </Form.Select>
@@ -71,18 +90,18 @@ function UpdatePokemon(props) {
 
                         <Form.Group className="mb-3" controlId="formEditImgUrl">
                             <Form.Label>URL de l'image du Pokémon</Form.Label>
-                            <Form.Control type="text" value={concernedPokemon.imgUrl}></Form.Control>
+                            <Form.Control {...register("editPokemonImgUrl")} type="text" defaultValue={concernedPokemon.imgUrl}></Form.Control>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="controlIdEditShiny">
-                            <Form.Check type="checkbox" label="Chromatique" value={concernedPokemon.shiny}></Form.Check>
+                            <Form.Check {...register("editPokemonShiny")} type="checkbox" label="Chromatique" defaultChecked={concernedPokemon.shiny}></Form.Check>
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
                         Valider
                         </Button>
 
-                        <Button className="back-button" variant="danger" type="submit">
+                        <Button className="back-button" variant="danger" onClick={handleOnClick}>
                         Retour
                         </Button>
                     </Form>
