@@ -12,9 +12,9 @@ function Footer() {
         <section>
           <MDBContainer className='text-center text-md-start'>
             <MDBRow className='mt-3'>
-              <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4 center-text'>
+              <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4 center-text white-text'>
                 <h6 className='text-uppercase fw-bold mb-4'>
-                  <MDBIcon className="me-3  " />
+                  <MDBIcon className="me-3" />
                   Aled Sauvé Nou
                 </h6>
                 <p>
@@ -22,22 +22,25 @@ function Footer() {
                   consectetur adipisicing elit.
                 </p>
               </MDBCol>
-              <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4 center-text'>
-                <h6 className='text-uppercase fw-bold mb-4'>Useful Info</h6>
+              <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4 center-text white-text'>
+                <h6 className='text-uppercase fw-bold mb-4'>Antoine Di Roberto</h6>
                 <p>
-                    Pricing
+                  <a href='https://www.linkedin.com/in/antoine-di-roberto-8aa93768/'>
+                    LinkedIn
+                  </a>
                 </p>
                 <p>
-                    Settings
+                  <a href='https://mobile.twitter.com/pestfps'>
+                    Twitter
+                  </a>
                 </p>
                 <p>
-                    Orders
-                </p>
-                <p>
-                    Help
+                  <a href='https://snowball.gg'>
+                  snowball.gg
+                  </a>
                 </p>
               </MDBCol>
-              <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4 center-text'>
+              <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4 center-text white-text'>
                 <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
                 <p>
                   <MDBIcon className="me-3" />
@@ -57,7 +60,7 @@ function Footer() {
             </MDBRow>
           </MDBContainer>
         </section>
-        <div className='text-center p-4 color-dark-red' >
+        <div className='text-center p-4 color-dark-red white-text' >
           © 2022 Copyright: Antoine Vollet - William Bailleul
         </div>
       </MDBFooter>

@@ -6,6 +6,8 @@ import ListExample from "../components/ListExample";
 import Footer from "../components/Footer";
 import AddPokemonModal from '../components/AddPokemonModal';
 import Filters from '../components/Filters';
+import UpdatePokemon from '../components/UpdatePokemon';
+import DeletePokemon from '../components/DeletePokemonModal';
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
@@ -45,6 +47,10 @@ function Home(props) {
         <AddPokemonModal
             types={types}
         />
+        <UpdatePokemon
+            types={types}
+        />
+        <DeletePokemon />
     </div>
 }
 

@@ -4,9 +4,10 @@ import { getAllTypes, findTypeByName, deleteTypeByName } from "../api/types"
 import PokedexCard from "../components/PokedexCard";
 import ListExample from "../components/ListExample";
 import Footer from "../components/Footer";
-import Lorem from '../components/Lorem';
 import AddPokemonModal from '../components/AddPokemonModal';
 import Filters from '../components/Filters';
+import UpdatePokemon from '../components/UpdatePokemon';
+import DeletePokemon from '../components/DeletePokemonModal';
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
@@ -42,11 +43,14 @@ function Home(props) {
                 })
             }
         </div>
-        <Lorem />
         <Footer />
         <AddPokemonModal
             types={types}
         />
+        <UpdatePokemon
+            types={types}
+        />
+        <DeletePokemon />
     </div>
 }
 
