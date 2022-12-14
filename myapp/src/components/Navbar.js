@@ -1,7 +1,7 @@
 import Nav from 'react-bootstrap/Nav';
 import "../App.css";
 
-function ListExample() {
+function Navbar() {
   return (
     <div className="follow-scroll-navbar">
       <Nav className="color-red" defaultActiveKey="/home" as="ul">
@@ -22,4 +22,4 @@ function ListExample() {
   );
 }
 
-export default ListExample;
+export default Navbar;
