@@ -14,10 +14,16 @@ function EnableEditForm(props) {
         if (pokemon) {
             props.setConcernedPokemon(pokemon);
             setShow(false);
+            props.resetForm();
         } else {
-            setMessage("Aucun Pokémon du nom de " + data.name + " trouvé!");
+            if (data.name == "")
+                setMessage("Veuillez renseigner ce champ pour accéder au panel de modification du Pokémon en question.");
+            else
+                setMessage("Aucun Pokémon du nom de " + data.name + " trouvé!");
         }
     }
+
+    props.getEnableEditShow(setShow);
 
     return <>
         {show &&

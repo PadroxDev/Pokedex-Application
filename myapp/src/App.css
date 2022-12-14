@@ -48,7 +48,8 @@ body {
 }
 
 .pokedex-image {
-  width: 90%;
+  width:90%;
+  max-height:100%;
 }
 
 .shiny-sparkles {

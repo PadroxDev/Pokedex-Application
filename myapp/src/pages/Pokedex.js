@@ -4,7 +4,6 @@ import { getAllTypes, findTypeByName, deleteTypeByName } from "../api/types"
 import PokedexCard from "../components/PokedexCard";
 import ListExample from "../components/ListExample";
 import Footer from "../components/Footer";
-import Lorem from '../components/Lorem';
 import AddPokemonModal from '../components/AddPokemonModal';
 import Filters from '../components/Filters';
 
@@ -42,7 +41,6 @@ function Home(props) {
                 })
             }
         </div>
-        <Lorem />
         <Footer />
         <AddPokemonModal
             types={types}

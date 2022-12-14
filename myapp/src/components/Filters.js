@@ -45,23 +45,23 @@ function Filters(props) {
     
         let tmpPokemons = null;
         if (data.primaryType == "All") {
-            tmpPokemons = props.pokemons.sort(compare);
+            tmpPokemons = props.pokemons;
         } else {
             const searchedType1 = props.types.find((t) => t.name == data.primaryType);
             if (data.secondaryType == "None" || data.secondaryType == data.primaryType) // Monotype search
             {
                 tmpPokemons = props.pokemons.filter((pokemon) => (
                     pokemon.types[0].name == searchedType1.name || (pokemon.types.length >= 2 && pokemon.types[1].name == searchedType1.name)
-                ) ).sort(compare);
+                ) );
             } else { // Double Types search
                 const searchedType2 = props.types.find((t) => t.name == data.secondaryType);
                 tmpPokemons = props.pokemons.filter((pokemon) => (
                     pokemon.types.length >= 2 && (pokemon.types[0].name == searchedType1.name  || pokemon.types[0].name == searchedType2.name ) && (pokemon.types[1].name == searchedType1.name || pokemon.types[1].name == searchedType2.name)
-                ) ).sort(compare);
+                ) );
             }
         }
         tmpPokemons = data.onlyShiny ? tmpPokemons.filter( (pokemon) => pokemon.shiny ) : tmpPokemons;
-        props.setPokemonsShow(tmpPokemons);
+        props.setPokemonsShow(tmpPokemons.sort(compare));
     }
  
     function GenerateTypesOptions(props) {
