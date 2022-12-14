@@ -41,13 +41,19 @@ function Home(props) {
         <div className="main-container">
             <h1  className="pokemon-list">Votre Pokédex</h1>
             <h2>Filters</h2>
-
+            
             <Filters
                 types={types}
                 pokemons={pokemons}
                 setPokemonsShow={setPokemonsShow}
                 pokemonsShow={getPokemonsShow}
             />
+
+            <div className="square">
+                <div>
+                    Content
+                </div>
+            </div>
 
             <div className="pokedex-content">
                 {
