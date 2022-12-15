@@ -26,11 +26,25 @@ export const getPokemonByName = async (name) => {
     return pokemon;
 }
 
-export const insertPokemon = async (name, number, types, imgUrl) => {
+export const getPokemonByNumber = async (number) => {
+    const response = await fetch(
+        'http://localhost:4444/pokemon/query?number=' + number, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }
+    );
+    const pokemon = await response.json();
+    return pokemon;
+}
+
+export const insertPokemon = async (name, number, types, imgUrl, imgUrlShiny) => {
     const response = await fetch(
         'http://localhost:4444/pokemon/insert', {
             method: 'POST',
-            body: JSON.stringify({name, number, types, imgUrl}),
+            body: JSON.stringify({name, number, types, imgUrl, imgUrlShiny}),
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
