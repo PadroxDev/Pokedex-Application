@@ -8,7 +8,6 @@ import AddPokemonModal from '../components/Pokedex/AddModal';
 import UpdatePokemon from '../components/Pokedex/UpdateModal';
 import DeletePokemon from '../components/Pokedex/DeleteModal';
 import Filters from '../components/Pokedex/Filters';
-import { getPokemonByNumber } from '../api/pokemons';
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
