@@ -25,9 +25,9 @@ function StarterPicker(props) {
             })
 
         } */}
-        <div className="starter"><img src = "../img/Bulbizarre.png" alt="Bulbizarre"/></div>
-        <div className="starter"><img src = "../img/Salamèche.png" alt="Salamèche"/></div>
-        <div className="starter"><img src = "../img/Carapuce.png" alt="Carapuce"/></div>
+        <div className="starter"><div className="tank"><img src = "../img/Bulbizarre.png" alt="Bulbizarre"/></div></div>
+        <div className="starter"><div className="tank"><img src = "../img/Salamèche.png" alt="Salamèche"/></div></div>
+        <div className="starter"><div className="tank"><img src = "../img/Carapuce.png" alt="Carapuce"/></div></div>
     </div>
 }
 
