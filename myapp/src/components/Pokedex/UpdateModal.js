@@ -20,7 +20,7 @@ function UpdatePokemon(props) {
         types.push(props.types.find((t) => t.name===data.editPokemonType1));
         if (data.editPokemonType2 != "None")
         types.push(props.types.find((t) => t.name===data.editPokemonType2));
-        updatePokemon(concernedPokemon.name, {name:data.editPokemonName, number:data.editPokemonNumber, types:types, imgUrl:data.editPokemonImgUrl, shiny:data.editPokemonShiny});
+        updatePokedex(concernedPokemon.name, {name:data.editPokemonName, number:data.editPokemonNumber, types:types, imgUrl:data.editPokemonImgUrl, shiny:data.editPokemonShiny});
         window.location.reload(false);
     }
 
