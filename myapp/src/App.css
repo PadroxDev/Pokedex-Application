@@ -23,19 +23,24 @@ body {
     row-gap: 2.7%;
   }
   .pokedex-number{
-    font-size: 0.6vw;
+    font-size: 0.8vw;
   }
   .pokedex-name{
-    font-size: 0.9vw;
+    font-size: 1.3vw;
   }
-
 }
 
 @media screen and (min-width: 1008px) and (max-width: 1500px){
   .pokedex-content {
     grid-template-columns: repeat(4, 1fr);
     gap: 2%;
-    row-gap: 0.5%;
+    row-gap: 1.8%;
+  }
+  .pokedex-number{
+    font-size: 0.9vw;
+  }
+  .pokedex-name{
+    font-size: 1.6vw;
   }
 }
 
@@ -43,13 +48,13 @@ body {
   .pokedex-content {
     grid-template-columns: repeat(3, 1fr);
     gap: 5%;
-    row-gap: 2%;
+    row-gap: 1.6%;
   }
   .pokedex-number{
-    font-size: 1vw;
+    font-size: 1.4vw;
   }
   .pokedex-name{
-    font-size: 1.3vw;
+    font-size: 2.5vw;
   }
 }
 
@@ -60,11 +65,10 @@ body {
     row-gap: 1.25%;
   }
   .pokedex-number{
-    font-size: 1.4vw;
+    font-size: 2.1vw;
   }
   .pokedex-name{
-    font-size: 2vw;
-    row-gap: 1.2%;
+    font-size: 4vw;
   }
 }
 
@@ -72,13 +76,13 @@ body {
   .pokedex-content {
     grid-template-columns: repeat(1, 1fr);
     gap: 0.5%;
+    row-gap: 0.6%;
   }
   .pokedex-number{
-    font-size: 3vw;
+    font-size: 5.5vw;
   }
   .pokedex-name{
-    font-size: 4vw;
-    gap: 0.7%;
+    font-size: 8vw;
   }
 }
 .pokedex-block {

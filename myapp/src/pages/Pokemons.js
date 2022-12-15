@@ -27,8 +27,8 @@ function Home(props) {
 
     return <div>
         <Navbar />
-        <h1 className="pokemon-list">Pokémon</h1>
-        <h2>Filters</h2>
+        <h1 className="pokemon-list">Tous les Pokémon</h1>
+        <h2>Filtres</h2>
         <Filters
             types={types}
         />
