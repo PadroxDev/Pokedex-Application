@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
 import { getAllPokemons } from "../api/pokemons";
 import { getAllTypes } from "../api/types"
-import PokedexCard from "../components/PokedexCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import AddPokemonModal from '../components/AddPokemonModal';
-import Filters from '../components/Filters';
-import UpdatePokemon from '../components/UpdatePokemon';
-import DeletePokemon from '../components/DeletePokemonModal';
-import NotificationManager from '../components/NotificationManager'
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
@@ -39,41 +33,11 @@ function Home(props) {
 
     return <div>
         <Navbar />
-        <NotificationManager />
         <div className="main-container">
-            <h1  className="pokemon-list">Votre Pokédex</h1>
-            <h2>Filters</h2>
-            
-            <Filters
-                types={types}
-                pokemons={pokemons}
-                setPokemonsShow={setPokemonsShow}
-                pokemonsShow={getPokemonsShow}
-            />
-
-            <div className="pokedex-content">
-                {
-                    pokemonsShow.map((pokemon, key) => {
-                        return <div key={key} className="pokedex-block">
-                            <PokedexCard
-                                pokemon={pokemon}
-                            />
-                        </div>
-                    })
-                }
-            </div>
+            <h1>Laboratoire du Prof. Chen</h1>
+            <h2> C'est l'heure, vous avez 10 ans, vous allez donc pouvoir partir à l'avanture avec un compagnon... </h2>
+            <h2>Lequel allez vous choisir ?</h2>
         </div>
-
-        {/* Pokedex Editor - Buttons & Modals */}
-
-        <AddPokemonModal
-            types={types}
-        />
-        <UpdatePokemon
-            types={types}
-        />
-        <DeletePokemon />
-
         <Footer />
     </div>
 }

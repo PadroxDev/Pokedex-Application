@@ -8,6 +8,7 @@ import AddPokemonModal from '../components/AddPokemonModal';
 import Filters from '../components/Filters';
 import UpdatePokemon from '../components/UpdatePokemon';
 import DeletePokemon from '../components/DeletePokemonModal';
+import NotificationManager from '../components/NotificationManager'
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
@@ -27,11 +28,14 @@ function Home(props) {
 
     return <div>
         <Navbar />
-        <h1 className="pokemon-list">Pokémon</h1>
-        <h2>Filters</h2>
-        <Filters
-            types={types}
-        />
+        <NotificationManager />
+        <div className="main-container">
+            <h1  className="pokemon-list">Les Pokémon</h1>
+            <h2>Filters</h2>
+            <Filters
+                types={types}
+            />
+        </div>
         <div className="pokemon-content">
             {
                 pokemons.map((pokemon, key) => {
