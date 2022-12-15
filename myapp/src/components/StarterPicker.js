@@ -4,26 +4,28 @@ import { getAllPokemons ,getPokemonByNumber} from "../api/pokemons";
 import { getAllTypes } from "../api/types"
 
 function StarterPicker(props) {
-    const straters=["001","004","007"];
+    const [concernedStarter,setConcernedStarter]= useState(null);
+    const starters=["001","004","007"];
     const getStarter=async(index)=>{
-        return await getPokemonByNumber(starters[index]);
+        return await getPokemonByNumber(starters[index])
+            .then(result => setConcernedStarter(result))
+            .catch(err => console.log(err));
     }
 
-    return (
-    <div className='starter-choice'>
+    return <div className='starter-choice'>
         {
             starters.map((v,key)=>{
-                const starter=getStarter(v);
-                if (!starter) return;
+                getStarter(v);
+                console.log(getStarter(v))
+                if (!concernedStarter) return;
                 return <div 
-                    className='starter'>
-                        <img src={starter.imgUrl}/>
+                    key={key}className='starter'>
+                        <img src={concernedStarter.imgUrl}/>
                 </div>
             })
 
         }
     </div>
-    )
 }
 
 export default StarterPicker;

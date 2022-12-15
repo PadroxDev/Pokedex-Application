@@ -22,7 +22,7 @@ function Footer() {
                  JEANNE AU SECOURS
                 </p>
               </MDBCol>
-              <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4 center-text white-text'>
+              <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4 center-text white-text footer-link'>
                 <h6 className='text-uppercase fw-bold mb-4'>Antoine Di Roberto</h6>
                 <p>
                   <a href='https://www.linkedin.com/in/antoine-di-roberto-8aa93768/'>
