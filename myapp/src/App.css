@@ -19,15 +19,27 @@ body {
   .pokedex-content {
     grid-template-columns: repeat(5, 1fr);
     gap: 2%;
-    row-gap: 0.7%;
+    row-gap: 2.7%;
   }
+  .pokedex-number{
+    font-size: 0.6vw;
+  }
+  .pokedex-name{
+    font-size: 0.9vw;
+  }
+
 }
 
 @media screen and (min-width: 1008px) and (max-width: 1500px){
   .pokedex-content {
     grid-template-columns: repeat(4, 1fr);
     gap: 2%;
-    row-gap: 0.5%;
+  }
+  .pokedex-number{
+    font-size: 0.7vw;
+  }
+  .pokedex-name{
+    font-size: 1vw;
   }
 }
 
@@ -35,7 +47,13 @@ body {
   .pokedex-content {
     grid-template-columns: repeat(3, 1fr);
     gap: 5%;
-    row-gap: 0.6%;
+    row-gap: 2%;
+  }
+  .pokedex-number{
+    font-size: 1vw;
+  }
+  .pokedex-name{
+    font-size: 1.3vw;
   }
 }
 
@@ -43,14 +61,26 @@ body {
   .pokedex-content {
     grid-template-columns: repeat(2, 1fr);
     gap: 5%;
-    row-gap: 0.25%;
+    row-gap: 1.25%;
+  }
+  .pokedex-number{
+    font-size: 1.4vw;
+  }
+  .pokedex-name{
+    font-size: 2vw;
   }
 }
 
 @media screen and (max-width: 374px) {
   .pokedex-content {
     grid-template-columns: repeat(1, 1fr);
-    gap: 0.25%;
+    gap: 0.5%;
+  }
+  .pokedex-number{
+    font-size: 3vw;
+  }
+  .pokedex-name{
+    font-size: 4vw;
   }
 }
 .pokedex-block {
@@ -88,8 +118,8 @@ body {
 }
 
 .pokedex-image {
-  width:90%;
-  max-height:100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .shiny-sparkles {
@@ -106,14 +136,12 @@ body {
 
 .pokedex-number {
   color: #6A6A6A;
-  font-size: 0.7rem;
   font-weight: 700;
 }
 
 .pokedex-name {
   color: black;
   font-weight:700;
-  font-size:1.5rem;
   font-weight: 700;
 }
 
@@ -212,7 +240,6 @@ body {
   height: 50px; 
 }
 
-
 .center-text{
   display: flex;
   flex-direction: column;
@@ -306,8 +333,9 @@ body {
   color: #FF3E3E !important;
 }
 
-/*Pokemon Page*/
+/** Pokemon Page **/
 
+/* Responsive */
 .pokemon-content{
   display: inline-grid;
   overflow: auto;
@@ -367,7 +395,7 @@ body {
     font-size: 5vw;
   }
 }
-
+/* Image Display */
 .pokemon-block{
   background-color: aliceblue;
   border-radius: 10%;
@@ -418,7 +446,7 @@ body {
   min-width: 80%
 
 }
-
+/* Pokemon Info */
 .pokemon-data-holder{
   text-align: center;
 }
