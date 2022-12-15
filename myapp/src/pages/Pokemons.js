@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { getAllPokemons, insertPokemon, updatePokemon, deletePokemonByName } from "../api/pokemons";
-import { getAllTypes, findTypeByName, deleteTypeByName } from "../api/types"
+import { getAllPokemons } from "../api/pokemons";
+import { getAllTypes } from "../api/types"
 import PokemonCard from "../components/PokemonCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";

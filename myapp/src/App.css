@@ -6,14 +6,6 @@ body {
   background-color: lightgrey;
   scroll-behavior: smooth;
   font-family: 'Barlow', sans-serif;
-  /*
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  */
-}
-/*
-body::-webkit-scrollbar {
-  display: none;
 }
 
 /*Pokedex Page*/
@@ -21,14 +13,14 @@ body::-webkit-scrollbar {
 .pokedex-content{
   display: inline-grid;
   overflow: auto;
-  margin: 2rem 10%;
+  margin: 2rem 0%;
 }
 
 @media screen and (min-width: 1501px){
   .pokedex-content {
     grid-template-columns: repeat(5, 1fr);
     gap: 2%;
-    row-gap: 0.7%;
+    row-gap: 3%;
   }
 }
 
@@ -36,7 +28,7 @@ body::-webkit-scrollbar {
   .pokedex-content {
     grid-template-columns: repeat(4, 1fr);
     gap: 2%;
-    row-gap: 0.5%;
+    row-gap: 2%;
   }
 }
 
@@ -44,7 +36,7 @@ body::-webkit-scrollbar {
   .pokedex-content {
     grid-template-columns: repeat(3, 1fr);
     gap: 5%;
-    row-gap: 0.6%;
+    row-gap: 1.5%;
   }
 }
 
@@ -52,14 +44,14 @@ body::-webkit-scrollbar {
   .pokedex-content {
     grid-template-columns: repeat(2, 1fr);
     gap: 5%;
-    row-gap: 0.25%;
+    row-gap: 1.2%;
   }
 }
 
 @media screen and (max-width: 374px) {
   .pokedex-content {
     grid-template-columns: repeat(1, 1fr);
-    gap: 0.25%;
+    gap: 0.7%;
   }
 }
 .pokedex-block {
@@ -74,7 +66,7 @@ body::-webkit-scrollbar {
 }
 
 .pokedex-card .top-card-holder {
-  height: 73.636%;
+  height: 81.16%;
 }
 
 .pokedex-gradient {
@@ -487,15 +479,13 @@ body::-webkit-scrollbar {
 
 /* TITLES */
 h1 {
-  font-size : 6rem;
-  font-weight: 400;
+  font-size : 7rem;
+  font-weight: 500;
   top: 40%;
   left: 40%;
   font-family: 'Righteous', cursive;
-  background: linear-gradient(to right,blue, white, red, blue, white, red, blue, white, red, blue, white, red);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
   padding-top: 200px;
+  text-decoration:underline;
 }
 
 h2 {
