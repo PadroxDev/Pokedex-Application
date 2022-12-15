@@ -4,7 +4,7 @@ import { getAllPokemons ,getPokemonByNumber} from "../api/pokemons";
 import { getAllTypes } from "../api/types"
 
 function StarterPicker(props) {
-    const straters=["001","004","007"];
+    const starters=["001","004","007"];
     const getStarter=async(index)=>{
         return await getPokemonByNumber(starters[index]);
     }
