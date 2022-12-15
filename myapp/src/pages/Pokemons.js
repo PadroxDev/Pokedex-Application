@@ -8,6 +8,7 @@ import AddPokemonModal from '../components/AddPokemonModal';
 import Filters from '../components/Filters';
 import UpdatePokemon from '../components/UpdatePokemon';
 import DeletePokemon from '../components/DeletePokemonModal';
+import NotificationManager from '../components/NotificationManager'
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
