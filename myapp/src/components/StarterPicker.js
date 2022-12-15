@@ -12,8 +12,8 @@ function StarterPicker(props) {
             .catch(err => console.log(err));
     }
 
-    return <div className='starter-choice'>
-        {
+    return <div className='starter-choice' >
+        {/* {
             starters.map((v,key)=>{
                 getStarter(v);
                 console.log(getStarter(v))
@@ -24,7 +24,10 @@ function StarterPicker(props) {
                 </div>
             })
 
-        }
+        } */}
+        <div className="starter"><img src = "../img/Bulbizarre.png" alt="Bulbizarre"/></div>
+        <div className="starter"><img src = "../img/Salamèche.png" alt="Salamèche"/></div>
+        <div className="starter"><img src = "../img/Carapuce.png" alt="Carapuce"/></div>
     </div>
 }
 

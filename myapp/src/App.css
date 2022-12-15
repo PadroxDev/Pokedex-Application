@@ -10,7 +10,6 @@ body {
 
 /** Navbar **/
 
-
 .navbar-text-link{
   display: flex;
   align-items: center;
@@ -238,16 +237,27 @@ body {
 }
 
 /** Home Page**/
-
-.strater{
+.starter-choice{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  margin-bottom: 100px; 
+}
+.starter{
   background-image: url("../public/img/pokeball.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.strater:hover{
+.starter:hover{
   background-image: url("../public/img/pokeball-colored.png");
+  background-size: contain;
   transform: rotate(25deg);
-  transform: scale(1.2);
-  transition-delay: 10ms;
+}
+
+.starter img:hover{
+  transform: matrix();
 }
 
 /** Pokedex Page **/
