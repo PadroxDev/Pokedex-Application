@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getAllPokemons } from "../api/pokemons";
+import { getAllPokedex } from "../api/pokedex";
 import { getAllTypes } from "../api/types"
 import PokedexCard from "../components/PokedexCard";
 import Navbar from "../components/Navbar";
@@ -8,6 +8,7 @@ import AddPokemonModal from '../components/Pokedex/AddModal';
 import UpdatePokemon from '../components/Pokedex/UpdateModal';
 import DeletePokemon from '../components/Pokedex/DeleteModal';
 import Filters from '../components/Pokedex/Filters';
+import { getPokemonByNumber } from '../api/pokemons';
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
@@ -15,7 +16,7 @@ function Home(props) {
     const [ types, setTypes ] = useState([]);
 
     useEffect(() => {
-        const pokemonsFetched = getAllPokemons();
+        const pokemonsFetched = getAllPokedex();
         pokemonsFetched
             .then(result => {setPokemons(result);setPokemonsShow(result.sort((a, b) => {
                 if (a.number < b.number)

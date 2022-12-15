@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import { updatePokemon } from '../../api/pokemons';
-import EnableEditForm from '../Pokedex/EnableEditForm';
+import EnableEditForm from '../Pokemon/EnableEditForm';
 
 function UpdatePokemon(props) {
     const [show, setShow] = useState(false);

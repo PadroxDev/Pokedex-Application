@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import "../App.css";
-import { getPokedexByName, insertPokedex, updatePokedex } from '../api/pokedex';
+import { getPokedexByName, updatePokedex } from '../api/pokedex';
 
 const shinyRate = 10;
 
