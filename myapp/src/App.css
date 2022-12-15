@@ -5,6 +5,7 @@
 body {
   background-color: lightgrey;
   scroll-behavior: smooth;
+  font-family: 'Barlow', sans-serif;
 }
 
 /*Pokedex Page*/
@@ -12,7 +13,7 @@ body {
 .pokedex-content{
   display: inline-grid;
   overflow: auto;
-  margin: 2rem 10%;
+  margin: 2rem 0%;
 }
 
 @media screen and (min-width: 1501px){
@@ -34,12 +35,7 @@ body {
   .pokedex-content {
     grid-template-columns: repeat(4, 1fr);
     gap: 2%;
-  }
-  .pokedex-number{
-    font-size: 0.7vw;
-  }
-  .pokedex-name{
-    font-size: 1vw;
+    row-gap: 0.5%;
   }
 }
 
@@ -68,6 +64,7 @@ body {
   }
   .pokedex-name{
     font-size: 2vw;
+    row-gap: 1.2%;
   }
 }
 
@@ -81,6 +78,7 @@ body {
   }
   .pokedex-name{
     font-size: 4vw;
+    gap: 0.7%;
   }
 }
 .pokedex-block {
@@ -95,7 +93,7 @@ body {
 }
 
 .pokedex-card .top-card-holder {
-  height: 73.636%;
+  height: 81.16%;
 }
 
 .pokedex-gradient {
@@ -487,7 +485,7 @@ body {
 
 .pokemon-capture-button {
   color: white;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
   margin: 0 15%;
   background-color: #dc3545;
@@ -506,16 +504,19 @@ body {
 
 /* TITLES */
 h1 {
-  font-size : 6rem;
-  font-weight: 400;
+  font-size : 7rem;
+  font-weight: 500;
   top: 40%;
   left: 40%;
-  font-family: cursive;
-  background: linear-gradient(to right,blue, white, red, blue, white, red, blue, white, red, blue, white, red);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  font-family: 'Righteous', cursive;
   padding-top: 200px;
+  text-decoration:underline;
+}
 
+h2 {
+  font-size : 3rem;
+  font-weight: 500;
+  font-family: 'barlow', sans-serif;
 }
 
 .main-container {
