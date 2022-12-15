@@ -8,7 +8,22 @@ body {
   font-family: 'Barlow', sans-serif;
 }
 
-/*Pokedex Page*/
+/** Home Page**/
+
+.strater{
+  background-image: url("../public/img/pokeball.png");
+}
+
+.strater:hover{
+  background-image: url("../public/img/pokeball-colored.png");
+  transform: rotate(25deg);
+  transform: scale(1.2);
+  transition-delay: 10ms;
+}
+
+/** Pokedex Page **/
+
+/* Responsive */
 
 .pokedex-content{
   display: inline-grid;

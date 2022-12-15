@@ -3,6 +3,7 @@ import { getAllPokemons } from "../api/pokemons";
 import { getAllTypes } from "../api/types"
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import StarterPicker from "../components/StarterPicker"
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
@@ -37,6 +38,7 @@ function Home(props) {
             <h1>Laboratoire du Prof. Chen</h1>
             <h2> C'est l'heure, vous avez 10 ans, vous allez donc pouvoir partir à l'avanture avec un compagnon... </h2>
             <h2>Lequel allez vous choisir ?</h2>
+            <StarterPicker />
         </div>
         <Footer />
     </div>

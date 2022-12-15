@@ -28,11 +28,13 @@ function Home(props) {
 
     return <div>
         <Navbar />
-        <h1 className="pokemon-list">Tous les Pokémon</h1>
-        <h2>Filtres</h2>
-        <Filters
-            types={types}
-        />
+        <div className="main-container">
+            <h1 className="pokemon-list">Tous les Pokémon</h1>
+            <h2>Filtres</h2>
+            <Filters
+                types={types}
+            />
+        </div>
         <div className="pokemon-content">
             {
                 pokemons.map((pokemon, key) => {
