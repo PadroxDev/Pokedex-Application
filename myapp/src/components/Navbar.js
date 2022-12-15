@@ -8,7 +8,7 @@ function Navbar() {
         <img className="home-button-image" src="./img/home_button.png"/>     
         <div className='navbar-text-link'>
           <Nav.Item as="li">
-            <Nav.Link className="navbar-items" href="/" eventKey="link-1 white-text">Home</Nav.Link>
+            <Nav.Link className="navbar-items" href="/" eventKey="link-1 white-text">Laboratoire</Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
             <Nav.Link className="navbar-items" href="/pokemons" eventKey="link-1 white-text">Pokémon</Nav.Link>
