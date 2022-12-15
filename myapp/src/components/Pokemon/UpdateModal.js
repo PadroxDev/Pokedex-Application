@@ -4,8 +4,8 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
-import { updatePokemon } from '../api/pokemons';
-import EnableEditForm from './EnableEditForm';
+import { updatePokemon } from '../../api/pokemons';
+import EnableEditForm from '../Pokedex/EnableEditForm';
 
 function UpdatePokemon(props) {
     const [show, setShow] = useState(false);
@@ -20,7 +20,7 @@ function UpdatePokemon(props) {
         types.push(props.types.find((t) => t.name===data.editPokemonType1));
         if (data.editPokemonType2 != "None")
         types.push(props.types.find((t) => t.name===data.editPokemonType2));
-        updatePokemon(concernedPokemon.name, {name:data.editPokemonName, number:data.editPokemonNumber, types:types, imgUrl:data.editPokemonImgUrl, shiny:data.editPokemonShiny});
+        updatePokemon(concernedPokemon.name, {name:data.editPokemonName, number:data.editPokemonNumber, types:types, imgUrl:data.editPokemonImgUrl, imgUrlShiny:data.editPokemonImgUrlShiny});
         window.location.reload(false);
     }
 
@@ -93,8 +93,9 @@ function UpdatePokemon(props) {
                             <Form.Control {...register("editPokemonImgUrl")} type="text" defaultValue={concernedPokemon.imgUrl}></Form.Control>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="controlIdEditShiny">
-                            <Form.Check {...register("editPokemonShiny")} type="checkbox" label="Chromatique" defaultChecked={concernedPokemon.shiny}></Form.Check>
+                        <Form.Group className="mb-3" controlId="formEditImgUrlShiny">
+                            <Form.Label>URL de l'image du Pokémon chromatique</Form.Label>
+                            <Form.Control {...register("editPokemonImgUrlShiny")} type="text" defaultValue={concernedPokemon.imgUrlShiny}></Form.Control>
                         </Form.Group>
 
                         <Button variant="primary" type="submit">

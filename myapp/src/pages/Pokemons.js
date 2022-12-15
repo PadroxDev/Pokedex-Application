@@ -4,20 +4,26 @@ import { getAllTypes } from "../api/types"
 import PokemonCard from "../components/PokemonCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import AddPokemonModal from '../components/AddPokemonModal';
-import Filters from '../components/Filters';
-import UpdatePokemon from '../components/UpdatePokemon';
-import DeletePokemon from '../components/DeletePokemonModal';
-import NotificationManager from '../components/NotificationManager'
+import AddPokemonModal from '../components/Pokemon/AddModal';
+import UpdatePokemon from '../components/Pokemon/UpdateModal';
+import DeletePokemon from '../components/Pokemon/DeleteModal';
+import Filters from '../components/Pokemon/Filters';
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);
+    const [ pokemonsShow, setPokemonsShow ] = useState([]);
     const [ types, setTypes ] = useState([]);
 
     useEffect(() => {
         const pokemonsFetched = getAllPokemons();
         pokemonsFetched
-            .then(result => setPokemons(result))
+            .then(result => {setPokemons(result);setPokemonsShow(result.sort((a, b) => {
+                if (a.number < b.number)
+                    return -1;
+                if (a.number > b.number)
+                    return 1;
+                return 0;
+            }))})
             .catch(error => console.log("Erreur avec votre API :", error.message));
 
         const typesFetched = getAllTypes();
@@ -26,16 +32,25 @@ function Home(props) {
             .catch(error => console.log("Erreur avec votre API :", error.message));
     }, []);
 
+    function getPokemonsShow() {
+        return pokemonsShow;
+    }
+
     return <div>
         <Navbar />
-        <h1 className="pokemon-list">Tous les Pokémon</h1>
-        <h2>Filtres</h2>
-        <Filters
-            types={types}
-        />
+        <div className="main-container">
+            <h1 className="pokemon-list">Tous les Pokémon</h1>
+            <h2>Filtres</h2>
+            <Filters
+                types={types}
+                pokemons={pokemons}
+                setPokemonsShow={setPokemonsShow}
+                pokemonsShow={getPokemonsShow}
+            />
+        </div>
         <div className="pokemon-content">
             {
-                pokemons.map((pokemon, key) => {
+                pokemonsShow.map((pokemon, key) => {
                     return <div key={key} className="pokemon-block">
                         <PokemonCard
                             pokemon={pokemon}

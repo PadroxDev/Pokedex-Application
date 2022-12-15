@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { deletePokemonByName } from '../api/pokemons';
+import { deletePokemonByName } from '../../api/pokemons';
 
-function UpdatePokemon(props) {
+function DeletePokemon(props) {
     const [show, setShow] = useState(false);
     const { register, handleSubmit } = useForm();
 
@@ -49,4 +49,4 @@ function UpdatePokemon(props) {
     </>
 }
 
-export default UpdatePokemon;
+export default DeletePokemon;

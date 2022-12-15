@@ -4,11 +4,10 @@ import { getAllTypes } from "../api/types"
 import PokedexCard from "../components/PokedexCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import AddPokemonModal from '../components/AddPokemonModal';
-import Filters from '../components/Filters';
-import UpdatePokemon from '../components/UpdatePokemon';
-import DeletePokemon from '../components/DeletePokemonModal';
-import NotificationManager from '../components/NotificationManager'
+import AddPokemonModal from '../components/Pokedex/AddModal';
+import UpdatePokemon from '../components/Pokedex/UpdateModal';
+import DeletePokemon from '../components/Pokedex/DeleteModal';
+import Filters from '../components/Pokedex/Filters';
 
 function Home(props) {
     const [ pokemons, setPokemons ] = useState([]);

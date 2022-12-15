@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import { useForm } from 'react-hook-form';
-import { getPokemonByName } from '../api/pokemons';
+import { getPokedexByName } from '../../api/pokedex';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 
@@ -10,7 +10,7 @@ function EnableEditForm(props) {
     const [ show, setShow ] = useState(true);
 
     const onSubmit = async (data) => {
-        const pokemon = await getPokemonByName(data.name);
+        const pokemon = await getPokedexByName(data.name);
         if (pokemon) {
             props.setConcernedPokemon(pokemon);
             setShow(false);

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { insertPokemon } from '../api/pokemons';
+import { insertPokemon } from '../../api/pokemons';
 
 function GenerateTypesOptions(props) {
     return props.types.map((type, key) => (
@@ -17,8 +17,8 @@ function AddPokemonModal(props) {
     const [number, setNumber] = useState("025");
     const [type1, setType1] = useState("Électrik");
     const [type2, setType2] = useState("None");
-    const [imgUrl, setImgUrl] = useState("https://www.pokepedia.fr/images/thumb/7/76/Pikachu-DEPS.png/250px-Pikachu-DEPS.png");
-    const [shiny, setShiny] = useState(false);
+    const [imgUrl, setImgUrl] = useState("https://www.pokepedia.fr/images/thumb/1/1b/Pikachu_%28Casquette_de_Sinnoh%29-SL.png/563px-Pikachu_%28Casquette_de_Sinnoh%29-SL.png?20200930111255");
+    const [imgUrlShiny, setImgUrlShiny ] = useState("https://www.pokepedia.fr/images/3/3c/Sprite_025_%E2%99%82_chromatique_EV.png");
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
@@ -33,7 +33,8 @@ function AddPokemonModal(props) {
         types.push(props.types.find((t)=>t.name===type1));
         if (type2 != "None")
             types.push(props.types.find((t)=>t.name===type2));
-        insertPokemon(name, number, types, imgUrl, shiny);
+        console.log(imgUrlShiny);
+        insertPokemon(name, number, types, imgUrl, imgUrlShiny);
     };
 
     const handleName = (event) => {
@@ -56,8 +57,8 @@ function AddPokemonModal(props) {
         setImgUrl(event.currentTarget.value);
     }
 
-    const handleShiny = (event) => {
-        setShiny(event.currentTarget.value);
+    const handleImgUrlShiny = (event) => {
+        setImgUrlShiny(event.currentTarget.value);
     }
 
     const handleClose = () => setShow(false);
@@ -108,8 +109,9 @@ function AddPokemonModal(props) {
                     <Form.Control type="text" placeholder="https://www.pokepedia.fr/images/thumb/7/76/Pikachu-DEPS.png/250px-Pikachu-DEPS.png" onChange={handleImgUrl} />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formPokemonShiny">
-                    <Form.Check type="checkbox" label="Chromatique" onChange={handleShiny} />
+                <Form.Group className="mb-3" controlId="formPokemonImgUrlShiny">
+                    <Form.Label>URL de l'image du Pokémon chromatique</Form.Label>
+                    <Form.Control type="text" placeholder="https://www.pokepedia.fr/images/3/3c/Sprite_025_%E2%99%82_chromatique_EV.png" onChange={handleImgUrlShiny} />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
